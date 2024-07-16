@@ -1,6 +1,8 @@
 package main;
 
 
+import books.Book;
+
 public class Main {
     public static void main(String[] args) {
         String greet = "Hello QJ";
@@ -23,6 +25,10 @@ public class Main {
         System.out.println("Subtraction of " + a + " and " + b + " = " + subtraction(a, b));
 
         System.out.println(isStringLonger("book", 10));
+        Book harryPorter = new Book ("HH", 1000);
+        System.out.println(harryPorter.getCurrentPage());
+        System.out.println(harryPorter.getTitle());
+
 
     }
     private static void printGreeting(String name){
