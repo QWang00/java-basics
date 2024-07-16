@@ -1,10 +1,25 @@
 package books;
 
+import java.util.Random;
+
 public class Book {
 
     private String title;
     private int pages;
     private int currentPage;
+
+    public static void main(String[] args) {
+
+        Book book = new Book("\"Gone With the Wind\"", 678, 291);
+
+        System.out.println("The book is: " + book.getTitle());
+        System.out.println("The current page: " + book.getCurrentPage());
+
+        Random random = new Random();
+        book.setCurrentPage(random.nextInt(book.getPages()));
+        System.out.println("The new current page: " + book.getCurrentPage() + " in the " + book.getTitle());
+
+    }
 
     public Book(String title, int pages) {
         this.title = title;
