@@ -18,11 +18,18 @@ public class Main {
         String firstName = "QJ";
         printGreeting(firstName);
 
+        int a = 10;
+        int b = 4;
+        System.out.println("Subtraction of " + a + " and " + b + " = " + subtraction(a, b));
 
 
     }
     private static void printGreeting(String name){
         System.out.println("Hello, "+ name);
+    }
+
+    public static int subtraction(int a, int b) {
+        return a - b;
     }
 
 }
