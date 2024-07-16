@@ -31,9 +31,9 @@ public class Ebook extends Book {
     public String toString() {
         return "Ebook{" +
                 "fileType='" + fileType + '\'' +
-                "title: " + super.getTitle() +
-                "pages: " + super.getPages() +
-                "current page: " + super.getCurrentPage() +
+                "title: " + getTitle() +
+                "pages: " + getPages() +
+                "current page: " + getCurrentPage() +
                 '}';
     }
 }
