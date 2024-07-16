@@ -79,6 +79,40 @@ public class Library {
         }
     }
 
+    // Methods to get all books
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    // Methods to get all ebooks
+    public List<Ebook> getEbooks() {
+        return ebooks;
+    }
+
+    // Methods to get all graphic novels
+    public List<GraphicNovel> getGraphicNovels() {
+        return graphicNovels;
+    }
+
+    // Methods to get all sheet music
+    public List<SheetMusic> getSheetMusic() {
+        return sheetMusic;
+    }
+
+    // Method to convert a book to an Ebook
+    public void convertToEbook(Book book, String fileType) {
+        if (!(book instanceof Ebook)) {
+            Ebook ebook = new Ebook(book.getTitle(), book.getPages(), book.getCurrentPage(), fileType);
+            if (books.contains(book)) {
+                books.remove(book);
+                books.add(ebook);
+            }
+            ebooks.add(ebook);
+        } else {
+            System.out.println("The book is already an Ebook.");
+        }
+    }
+
     // Main method to test the Library class
     public static void main(String[] args) {
         Library library = new Library();
@@ -109,25 +143,12 @@ public class Library {
         library.listSheetMusic();
         System.out.println();
 
-        System.out.println("Withdrawing books:");
-        library.withdrawBook(book1);
-        library.withdrawEbook(ebook1);
-        library.withdrawGraphicNovel(graphicNovel1);
-        library.withdrawSheetMusic(sheetMusic1);
-
-        System.out.println("Listing all books after withdrawal:");
+        // Convert a book to an Ebook
+        library.convertToEbook(book1, "EPUB");
+        System.out.println("After converting a book to an Ebook:");
+        System.out.println("Listing all books:");
         library.listBooks();
-        System.out.println();
-
-        System.out.println("Listing all ebooks after withdrawal:");
+        System.out.println("Listing all ebooks:");
         library.listEbooks();
-        System.out.println();
-
-        System.out.println("Listing all graphic novels after withdrawal:");
-        library.listGraphicNovels();
-        System.out.println();
-
-        System.out.println("Listing all sheet music after withdrawal:");
-        library.listSheetMusic();
     }
 }
