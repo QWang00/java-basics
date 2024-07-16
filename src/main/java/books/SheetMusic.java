@@ -1,20 +1,7 @@
 package books;
 
 public class SheetMusic extends Book {
-
     private String composer;
-
-    public String getComposer() {
-        return composer;
-    }
-
-    public void setComposer(String composer) {
-        this.composer = composer;
-    }
-
-    public SheetMusic(String composer) {
-        this.composer = composer;
-    }
 
     public SheetMusic(String title, int pages, String composer) {
         super(title, pages);
@@ -26,13 +13,16 @@ public class SheetMusic extends Book {
         this.composer = composer;
     }
 
+    public String getComposer() {
+        return composer;
+    }
+
     @Override
     public String toString() {
         return "SheetMusic{" +
                 "composer='" + composer + '\'' +
-                "title: " + getTitle() +
-                "pages: " + getPages() +
-                "current page: " + getCurrentPage() +
+                ", title='" + getTitle() + '\'' +
+                ", pages=" + getPages() +
                 '}';
     }
 }

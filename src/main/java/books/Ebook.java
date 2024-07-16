@@ -1,20 +1,7 @@
 package books;
 
 public class Ebook extends Book {
-
     private String fileType;
-
-    public void setFileType (String fileType) {
-        this.fileType = fileType;
-    }
-
-    public String getFileType() {
-        return fileType;
-    }
-
-    public Ebook(String fileType) {
-        this.fileType = fileType;
-    }
 
     public Ebook(String title, int pages, String fileType) {
         super(title, pages);
@@ -26,14 +13,16 @@ public class Ebook extends Book {
         this.fileType = fileType;
     }
 
+    public String getFileType() {
+        return fileType;
+    }
 
     @Override
     public String toString() {
         return "Ebook{" +
                 "fileType='" + fileType + '\'' +
-                "title: " + getTitle() +
-                "pages: " + getPages() +
-                "current page: " + getCurrentPage() +
+                ", title='" + getTitle() + '\'' +
+                ", pages=" + getPages() +
                 '}';
     }
 }

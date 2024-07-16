@@ -1,20 +1,7 @@
 package books;
 
 public class GraphicNovel extends Book {
-
     private String illustrator;
-
-    public void setIllustrator(String illustrator) {
-        this.illustrator = illustrator;
-    }
-
-    public String getIllustrator() {
-        return illustrator;
-    }
-
-    public GraphicNovel(String illustrator) {
-        this.illustrator = illustrator;
-    }
 
     public GraphicNovel(String title, int pages, String illustrator) {
         super(title, pages);
@@ -26,13 +13,16 @@ public class GraphicNovel extends Book {
         this.illustrator = illustrator;
     }
 
+    public String getIllustrator() {
+        return illustrator;
+    }
+
     @Override
     public String toString() {
         return "GraphicNovel{" +
                 "illustrator='" + illustrator + '\'' +
-                "title: " + getTitle() +
-                "pages: " + getPages() +
-                "current page: " + getCurrentPage() +
+                ", title='" + getTitle() + '\'' +
+                ", pages=" + getPages() +
                 '}';
     }
 }

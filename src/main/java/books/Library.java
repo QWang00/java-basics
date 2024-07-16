@@ -134,6 +134,23 @@ public class Library {
         return ebookLibrary;
     }
 
+    // Print books in tabular format
+    public void printInventory() {
+        System.out.println("Title\t\tPages");
+        for (Book book : books) {
+            System.out.println(book.getTitle() + "\t\t" + book.getPages());
+        }
+        for (Ebook ebook : ebooks) {
+            System.out.println(ebook.getTitle() + "\t\t" + ebook.getPages());
+        }
+        for (GraphicNovel graphicNovel : graphicNovels) {
+            System.out.println(graphicNovel.getTitle() + "\t\t" + graphicNovel.getPages());
+        }
+        for (SheetMusic music : sheetMusic) {
+            System.out.println(music.getTitle() + "\t\t" + music.getPages());
+        }
+    }
+
     // Main method to test the Library class
     public static void main(String[] args) {
         Library library = new Library();
@@ -148,25 +165,16 @@ public class Library {
         library.depositGraphicNovel(graphicNovel1);
         library.depositSheetMusic(sheetMusic1);
 
-        System.out.println("Listing all books:");
-        library.listBooks();
-        System.out.println();
-
-        System.out.println("Listing all ebooks:");
-        library.listEbooks();
-        System.out.println();
-
-        System.out.println("Listing all graphic novels:");
-        library.listGraphicNovels();
-        System.out.println();
-
-        System.out.println("Listing all sheet music:");
-        library.listSheetMusic();
-        System.out.println();
+        System.out.println("Original Library Inventory:");
+        System.out.println("Title\t\tPages");
+        library.printInventory();
 
         // Convert Library to EbookLibrary
         EbookLibrary ebookLibrary = library.convertToEbookLibrary();
-        System.out.println("Listing all ebooks in EbookLibrary:");
-        ebookLibrary.listEbooks();
+        System.out.println("\nEbookLibrary Inventory:");
+        System.out.println("Title\t\tPages\t\tFile Type");
+        for (Ebook ebook : ebookLibrary.getEbooks()) {
+            System.out.println(ebook.getTitle() + "\t\t" + ebook.getPages() + "\t\t" + ebook.getFileType());
+        }
     }
 }
