@@ -31,6 +31,9 @@ public class Ebook extends Book {
     public String toString() {
         return "Ebook{" +
                 "webAddress='" + webAddress + '\'' +
+                "title: " + super.getTitle() +
+                "pages: " + super.getPages() +
+                "current page: " + super.getCurrentPage() +
                 '}';
     }
 }

@@ -30,6 +30,9 @@ public class SheetMusic extends Book {
     public String toString() {
         return "SheetMusic{" +
                 "composer='" + composer + '\'' +
+                "title: " + super.getTitle() +
+                "pages: " + super.getPages() +
+                "current page: " + super.getCurrentPage() +
                 '}';
     }
 }

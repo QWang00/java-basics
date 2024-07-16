@@ -30,6 +30,9 @@ public class GraphicNovel extends Book {
     public String toString() {
         return "GraphicNovel{" +
                 "artist='" + artist + '\'' +
+                "title: " + super.getTitle() +
+                "pages: " + super.getPages() +
+                "current page: " + super.getCurrentPage() +
                 '}';
     }
 }
