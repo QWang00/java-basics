@@ -113,6 +113,27 @@ public class Library {
         }
     }
 
+    // Method to convert Library to EbookLibrary
+    public EbookLibrary convertToEbookLibrary() {
+        EbookLibrary ebookLibrary = new EbookLibrary();
+        for (Book book : books) {
+            Ebook ebook = new Ebook(book.getTitle(), book.getPages(), book.getCurrentPage(), "default");
+            ebookLibrary.depositEbook(ebook);
+        }
+        for (Ebook ebook : ebooks) {
+            ebookLibrary.depositEbook(ebook);
+        }
+        for (GraphicNovel graphicNovel : graphicNovels) {
+            Ebook ebook = new Ebook(graphicNovel.getTitle(), graphicNovel.getPages(), graphicNovel.getCurrentPage(), "default");
+            ebookLibrary.depositEbook(ebook);
+        }
+        for (SheetMusic music : sheetMusic) {
+            Ebook ebook = new Ebook(music.getTitle(), music.getPages(), music.getCurrentPage(), "default");
+            ebookLibrary.depositEbook(ebook);
+        }
+        return ebookLibrary;
+    }
+
     // Main method to test the Library class
     public static void main(String[] args) {
         Library library = new Library();
@@ -143,12 +164,9 @@ public class Library {
         library.listSheetMusic();
         System.out.println();
 
-        // Convert a book to an Ebook
-        library.convertToEbook(book1, "EPUB");
-        System.out.println("After converting a book to an Ebook:");
-        System.out.println("Listing all books:");
-        library.listBooks();
-        System.out.println("Listing all ebooks:");
-        library.listEbooks();
+        // Convert Library to EbookLibrary
+        EbookLibrary ebookLibrary = library.convertToEbookLibrary();
+        System.out.println("Listing all ebooks in EbookLibrary:");
+        ebookLibrary.listEbooks();
     }
 }
