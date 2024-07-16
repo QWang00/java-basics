@@ -22,6 +22,7 @@ public class Main {
         int b = 4;
         System.out.println("Subtraction of " + a + " and " + b + " = " + subtraction(a, b));
 
+        System.out.println(isStringLonger("book", 10));
 
     }
     private static void printGreeting(String name){
@@ -30,6 +31,9 @@ public class Main {
 
     public static int subtraction(int a, int b) {
         return a - b;
+    }
+    public static boolean isStringLonger(String s, int length){
+        return s.length() > length;
     }
 
 }
