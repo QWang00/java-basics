@@ -2,35 +2,35 @@ package books;
 
 public class Ebook extends Book {
 
-    private String webAddress;
+    private String fileType;
 
-    public void setAddress (String webAddress) {
-        this.webAddress = webAddress;
+    public void setFileType (String fileType) {
+        this.fileType = fileType;
     }
 
-    public String getWebAddress() {
-        return webAddress;
+    public String getFileType() {
+        return fileType;
     }
 
-    public Ebook(String webAddress) {
-        this.webAddress = webAddress;
+    public Ebook(String fileType) {
+        this.fileType = fileType;
     }
 
-    public Ebook(String title, int pages, String webAddress) {
+    public Ebook(String title, int pages, String fileType) {
         super(title, pages);
-        this.webAddress = webAddress;
+        this.fileType = fileType;
     }
 
-    public Ebook(String title, int pages, int currentPage, String webAddress) {
+    public Ebook(String title, int pages, int currentPage, String fileType) {
         super(title, pages, currentPage);
-        this.webAddress = webAddress;
+        this.fileType = fileType;
     }
 
 
     @Override
     public String toString() {
         return "Ebook{" +
-                "webAddress='" + webAddress + '\'' +
+                "fileType='" + fileType + '\'' +
                 "title: " + super.getTitle() +
                 "pages: " + super.getPages() +
                 "current page: " + super.getCurrentPage() +

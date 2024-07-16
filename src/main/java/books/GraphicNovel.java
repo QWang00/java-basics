@@ -2,34 +2,34 @@ package books;
 
 public class GraphicNovel extends Book {
 
-    private String artist;
+    private String illustrator;
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setIllustrator(String illustrator) {
+        this.illustrator = illustrator;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getIllustrator() {
+        return illustrator;
     }
 
-    public GraphicNovel(String artist) {
-        this.artist = artist;
+    public GraphicNovel(String illustrator) {
+        this.illustrator = illustrator;
     }
 
-    public GraphicNovel(String title, int pages, String artist) {
+    public GraphicNovel(String title, int pages, String illustrator) {
         super(title, pages);
-        this.artist = artist;
+        this.illustrator = illustrator;
     }
 
-    public GraphicNovel(String title, int pages, int currentPage, String artist) {
+    public GraphicNovel(String title, int pages, int currentPage, String illustrator) {
         super(title, pages, currentPage);
-        this.artist = artist;
+        this.illustrator = illustrator;
     }
 
     @Override
     public String toString() {
         return "GraphicNovel{" +
-                "artist='" + artist + '\'' +
+                "illustrator='" + illustrator + '\'' +
                 "title: " + super.getTitle() +
                 "pages: " + super.getPages() +
                 "current page: " + super.getCurrentPage() +
